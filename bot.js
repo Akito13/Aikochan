@@ -19,7 +19,7 @@ const commandSlashFolder = fs.readdirSync("./src/commands/slash");
 
 (async () => {
   for (file of functionFiles) {
-    require(`./functions/${file}`)(client);
+    require(`./src/functions/${file}`)(client);
   }
   client.handleEvents(eventFiles, "./src/events");
   client.handleCommands(commandSlashFolder, "./src/commands/slash");
