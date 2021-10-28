@@ -28,8 +28,10 @@ module.exports = {
         if (messageHadAttachment) {
             messageDeleteEmbed.setImage(messageHadAttachment.proxyURL);
         }
-        channel.send({
-            embeds: [messageDeleteEmbed]
-        })
+        if (!author.bot) {
+            channel.send({
+                embeds: [messageDeleteEmbed]
+            })
+        }
     }
 };
